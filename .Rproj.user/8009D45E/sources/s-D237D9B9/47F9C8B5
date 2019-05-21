@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1558451123304.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "47F9C8B5",
+    "lastKnownWriteTime" : 1558453881,
+    "last_content_update" : 1558453881951,
+    "path" : "~/Escritorio/textRank/textRank.Rmd",
+    "project_path" : "textRank.Rmd",
+    "properties" : {
+        "cursorPosition" : "71,38",
+        "last_setup_crc32" : "D237D9B9bb338d19",
+        "scrollLine" : "76",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

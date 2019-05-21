@@ -1,0 +1,4 @@
+"0","spanish_stop_words <- bind_rows(stop_words,"
+"0","                               data_frame(word = tm::stopwords(""spanish""),"
+"0","                                          lexicon = ""custom""))"
+"0","spanish_stop_words"
