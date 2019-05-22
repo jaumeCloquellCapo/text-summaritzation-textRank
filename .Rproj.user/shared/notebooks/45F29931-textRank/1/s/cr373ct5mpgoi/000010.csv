@@ -1,0 +1,3 @@
+"0","article_words <- article_words %>%"
+"0","  anti_join(data_frame(word = stopwords(kind = ""es"")), by = ""word"")"
+"0","article_words"

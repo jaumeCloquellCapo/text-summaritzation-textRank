@@ -1,3 +1,62 @@
 ]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ git init
 Inicializado repositorio Git vacío en /home/jaime/Escritorio/textRank/.git/
 ]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ git add .
+]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ git commit -m ""i"m"p"o"r"t" "t"e"s"t"[1P"[1P"x"t" "r"a"n"k"
+
+*** Por favor cuéntame quien eres.
+
+Corre
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Tu Nombre"
+
+para configurar la identidad por defecto de tu cuenta.
+Omite --global para configurar tu identidad solo en este repositorio.
+
+fatal: no es posible auto-detectar la dirección de correo (se obtuvo 'jaime@jaime-Vostro-5568.(none)')
+]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ git congih[K[K[Kfig user.email ""j"a"u"m"e"c"ñ"[1P"l"o"q"u"e"l"l"@"h"o"[1P"[1P"g"m"a"i"l"."c"o"m"
+]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ giot config user.email "jaumecloquell@gmail.com"[15Pmmit -m "import text rank"add .[Kcommit -m "import text rank"
+[master (commit-raíz) da7106d] import text rank
+ 28 files changed, 700 insertions(+)
+ create mode 100644 .Rproj.user/8009D45E/console06/C0EDC08A
+ create mode 100644 .Rproj.user/8009D45E/console06/INDEX001
+ create mode 100644 .Rproj.user/8009D45E/sources/prop/7AD277F2
+ create mode 100644 .Rproj.user/8009D45E/sources/prop/INDEX
+ create mode 100644 .Rproj.user/8009D45E/sources/s-D237D9B9/47F9C8B5
+ create mode 100644 .Rproj.user/8009D45E/sources/s-D237D9B9/47F9C8B5-contents
+ create mode 100644 .Rproj.user/8009D45E/sources/s-D237D9B9/D3945EFA-contents
+ create mode 100644 .Rproj.user/8009D45E/sources/s-D237D9B9/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/8009D45ED237D9B9/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/c18ka1gpnkd50/000006.csv
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/c81avrwxck9lq/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/c81avrwxck9lq/000003.metadata
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/c81avrwxck9lq/000003.rdf
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/cjvexad84d108/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/crggzbuyogp2v/000006.csv
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/crggzbuyogp2v/000007.metadata
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/crggzbuyogp2v/000007.rdf
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/csetup_chunk/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/cv7vmaokac250/000004.csv
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/cv7vmaokac250/000005.metadata
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/cv7vmaokac250/000005.rdf
+ create mode 100644 .Rproj.user/shared/notebooks/45F29931-textRank/1/s/cvplhpv0fobbb/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 textRank.Rmd
+ create mode 100644 textRank.Rproj
+ create mode 100644 textRank.html
+]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ git [K[K[K[Kgit remote add origin git@github.com:jaumeCloquellCapo/text_summaritzation_textRank.git
+]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ git p[K[K[K[K[Kgit push -u origin master
+Contando objetos: 46, listo.
+Delta compression using up to 4 threads.
+Comprimiendo objetos:   2% (1/37)   Comprimiendo objetos:   5% (2/37)   Comprimiendo objetos:   8% (3/37)   Comprimiendo objetos:  10% (4/37)   Comprimiendo objetos:  13% (5/37)   Comprimiendo objetos:  16% (6/37)   Comprimiendo objetos:  18% (7/37)   Comprimiendo objetos:  21% (8/37)   Comprimiendo objetos:  24% (9/37)   Comprimiendo objetos:  27% (10/37)   Comprimiendo objetos:  29% (11/37)   Comprimiendo objetos:  32% (12/37)   Comprimiendo objetos:  35% (13/37)   Comprimiendo objetos:  37% (14/37)   Comprimiendo objetos:  40% (15/37)   Comprimiendo objetos:  43% (16/37)   Comprimiendo objetos:  45% (17/37)   Comprimiendo objetos:  48% (18/37)   Comprimiendo objetos:  51% (19/37)   Comprimiendo objetos:  54% (20/37)   Comprimiendo objetos:  56% (21/37)   Comprimiendo objetos:  59% (22/37)   Comprimiendo objetos:  62% (23/37)   Comprimiendo objetos:  64% (24/37)   Comprimiendo objetos:  67% (25/37)   Comprimiendo objetos:  70% (26/37)   Comprimiendo objetos:  72% (27/37)   Comprimiendo objetos:  75% (28/37)   Comprimiendo objetos:  78% (29/37)   Comprimiendo objetos:  81% (30/37)   Comprimiendo objetos:  83% (31/37)   Comprimiendo objetos:  86% (32/37)   Comprimiendo objetos:  89% (33/37)   Comprimiendo objetos:  91% (34/37)   Comprimiendo objetos:  94% (35/37)   Comprimiendo objetos:  97% (36/37)   Comprimiendo objetos: 100% (37/37)   Comprimiendo objetos: 100% (37/37), listo.
+Escribiendo objetos:   2% (1/46)   Escribiendo objetos:   4% (2/46)   Escribiendo objetos:   6% (3/46)   Escribiendo objetos:   8% (4/46)   Escribiendo objetos:  10% (5/46)   Escribiendo objetos:  13% (6/46)   Escribiendo objetos:  15% (7/46)   Escribiendo objetos:  17% (8/46)   Escribiendo objetos:  19% (9/46)   Escribiendo objetos:  21% (10/46)   Escribiendo objetos:  23% (11/46)   Escribiendo objetos:  26% (12/46)   Escribiendo objetos:  28% (13/46)   Escribiendo objetos:  30% (14/46)   Escribiendo objetos:  32% (15/46)   Escribiendo objetos:  34% (16/46)   Escribiendo objetos:  36% (17/46)   Escribiendo objetos:  39% (18/46)   Escribiendo objetos:  41% (19/46)   Escribiendo objetos:  43% (20/46)   Escribiendo objetos:  45% (21/46)   Escribiendo objetos:  47% (22/46)   Escribiendo objetos:  50% (23/46)   Escribiendo objetos:  52% (24/46)   Escribiendo objetos:  54% (25/46)   Escribiendo objetos:  56% (26/46)   Escribiendo objetos:  58% (27/46)   Escribiendo objetos:  63% (29/46)   Escribiendo objetos:  65% (30/46)   Escribiendo objetos:  67% (31/46)   Escribiendo objetos:  69% (32/46)   Escribiendo objetos:  71% (33/46)   Escribiendo objetos:  73% (34/46)   Escribiendo objetos:  76% (35/46)   Escribiendo objetos:  78% (36/46)   Escribiendo objetos:  80% (37/46)   Escribiendo objetos:  82% (38/46)   Escribiendo objetos:  84% (39/46)   Escribiendo objetos:  86% (40/46)   Escribiendo objetos:  89% (41/46)   Escribiendo objetos:  91% (42/46)   Escribiendo objetos:  93% (43/46)   Escribiendo objetos:  95% (44/46)   Escribiendo objetos:  97% (45/46)   Escribiendo objetos: 100% (46/46)   Escribiendo objetos: 100% (46/46), 258.15 KiB | 2.08 MiB/s, listo.
+Total 46 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), done.[K
+To github.com:jaumeCloquellCapo/text_summaritzation_textRank.git
+ * [new branch]      master -> master
+Rama 'master' configurada para hacer seguimiento a la rama remota 'master' de 'origin'.
+]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ stop_words
+stop_words: orden no encontrada
+]0;/home/jaime/Escritorio/textRank]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ [K]0;jaime@jaime-Vostro-5568: ~/Escritorio/textRank[01;32mjaime@jaime-Vostro-5568[00m:[01;34m~/Escritorio/textRank[00m$ git add .

@@ -1,0 +1,8 @@
+"0","article_summary[[""sentences""]] %>%"
+"0","  ggplot(aes(textrank_id, textrank, fill = textrank_id)) +"
+"0","  geom_col() +"
+"0","  theme_minimal() +"
+"0","  scale_fill_viridis_c() +"
+"0","  guides(fill = ""none"") +"
+"0","  labs(x = ""Sentence"","
+"0","       y = ""TextRank score"")"

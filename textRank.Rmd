@@ -21,6 +21,7 @@ library(tidytext)
 library(textrank)
 library(rvest)
 library(tm)
+library(lexRankr)
 ```
 
 To showcase this method I have randomly (EXTENSIVELY filtered political and controversial) selected an article as our guinea pig. The main body is selected using the html_nodes.
@@ -60,7 +61,7 @@ library(ggplot2)
 
 article_words %>%
   count(word, sort = TRUE) %>%
-  filter(n > 25) %>%
+  filter(n > 6) %>%
   mutate(word = reorder(word, n)) %>%
   ggplot(aes(word, n)) +
   geom_col() +
@@ -68,24 +69,45 @@ article_words %>%
   coord_flip()
 ```
 
+
 ```{r}
-spanish_stop_words <- bind_rows(stop_words,
-                               data_frame(word = tm::stopwords("es"),
-                                          lexicon = "custom"))
-spanish_stop_words
+article_words <- article_words %>%
+  anti_join(data_frame(word = stopwords(kind = "es")), by = "word")
+article_words
 ```
 
+```{r}
+df <- data.frame(doc_id  = rep(1,nrow(article_sentences)), 
+                 sent_id = article_sentences$sentence_id, 
+                 tokens = article_words,
+                 stringsAsFactors = FALSE)
+df %>% 
+  bind_lexrank(tokens, doc_id, sent_id, level = 'tokens')
+```
 
 ```{r}
-stopwords(kind = "es")
-article_words <- article_words %>%
-  anti_join(stop_words, by = "word")
-article_words
+
+
+article_sentences %>% 
+  bind_lexrank(sentence, sentence_id, level="sentences") %>% 
+  arrange(desc(lexrank)) %>% 
+  select(sentence, lexrank) %>% 
+  knitr::kable(caption = "Most Representative @realDonaldTrump Tweets")
 ```
 
 ```{r}
 article_summary <- textrank_sentences(data = article_sentences, 
                                       terminology = article_words)
 article_summary
+```
+```{r}
+article_summary[["sentences"]] %>%
+  ggplot(aes(textrank_id, textrank, fill = textrank_id)) +
+  geom_col() +
+  theme_minimal() +
+  scale_fill_viridis_c() +
+  guides(fill = "none") +
+  labs(x = "Sentence",
+       y = "TextRank score")
 ```
 

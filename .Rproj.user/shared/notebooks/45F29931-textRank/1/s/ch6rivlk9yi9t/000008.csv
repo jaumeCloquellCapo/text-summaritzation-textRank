@@ -1,0 +1,7 @@
+"0","df <- data.frame(doc_id  = rep(1,nrow(article_sentences)), "
+"0","                 sent_id = article_sentences$sentence_id, "
+"0","                 tokens = article_words,"
+"0","                 stringsAsFactors = FALSE)"
+"2","Error in data.frame(doc_id = rep(1, nrow(article_sentences)), sent_id = article_sentences$sentence_id,  : 
+  arguments imply differing number of rows: 18, 435
+"
