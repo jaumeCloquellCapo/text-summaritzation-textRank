@@ -1,2 +1,0 @@
-"0","article_words %>%"
-"0","  count(word, sort = TRUE) "

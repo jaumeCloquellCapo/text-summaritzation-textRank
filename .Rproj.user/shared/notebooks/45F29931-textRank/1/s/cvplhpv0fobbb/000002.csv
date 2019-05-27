@@ -1,4 +1,0 @@
-"0","url <- ""https://www.elmundo.es/espana/2019/05/21/5ce3fa30fdddff7b688b45fa.html"""
-"0","article <- read_html(url) %>%"
-"0","  html_nodes('div[class=""ue-l-article__body ue-c-article__body""]') %>%"
-"0","  html_text()"

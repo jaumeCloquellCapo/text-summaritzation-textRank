@@ -1,4 +1,0 @@
-"0","article_sentences <- tibble(text = article) %>%"
-"0","  unnest_tokens(sentence, text, token = ""sentences"") %>%"
-"0","  mutate(sentence_id = row_number()) %>%"
-"0","  select(sentence_id, sentence)"

@@ -2,18 +2,18 @@
 title: "textRank"
 author: "jaume cloquell capo"
 date: "21 de mayo de 2019"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Text Rank
 
-https://www.hvitfeldt.me/blog/tidy-text-summarization-using-textrank/#data-preparation
-
-We start by loading the appropriate packages, which include tidyverse for general tasks, tidytext for text manipulations, textrank for the implementation of the TextRank algorithm and finally rvest to scrape an article to use as an example. The github for the textrank package can be found here.
+Comenzamos cargando los paquetes apropiados, que incluyen tidyverse para tareas generales, tidyverse para manipulaciones de texto, textrank para la implementación del algoritmo TextRank y finalmente rvest para raspar un artículo para usarlo como ejemplo. El github para el paquete textrank se puede encontrar https://github.com/bnosac/textrank
 
 ```{r cars}
 library(tidyverse)
@@ -24,7 +24,7 @@ library(tm)
 library(lexRankr)
 ```
 
-To showcase this method I have randomly (EXTENSIVELY filtered political and controversial) selected an article as our guinea pig. The main body is selected using the html_nodes.
+Para mostrar este método he seleccionado al azar  un artículo de nuestro diario nacional "elmundo" El cuerpo principal se selecciona utilizando los html_nodes.
 
 ```{r pressure, echo=FALSE}
 url <- "https://www.elmundo.es/espana/2019/05/21/5ce3fa30fdddff7b688b45fa.html"
@@ -33,7 +33,8 @@ article <- read_html(url) %>%
   html_text()
 ```
 
-next we load the article into a tibble (since tidytext required the input as a data.frame). We start by tokenize according to sentences which is done by setting token = "sentences" in unnest_tokens. The tokenization is not always perfect using this tokenizer, but it have a low number of dependencies and is sufficient for this showcase. Lastly we add sentence number column and switch the order of the columns (textrank_sentences prefers the columns in a certain order).
+a continuación cargamos el artículo en un tibble (ya que tidytext requería la entrada como data.frame). Comenzamos por tokenize según las frases, lo que se hace estableciendo token = "sentences" en unnest_tokens. La tokenización no siempre es perfecta con este tokenizador, pero tiene un número bajo de dependencias y es suficiente para este trabajo. Por último añadimos la columna de número de frase y cambiamos el orden de las columnas (textrank_sentences prefiere las columnas en un orden determinado).
+
 
 ```{r}
 article_sentences <- tibble(text = article) %>%
@@ -42,7 +43,7 @@ article_sentences <- tibble(text = article) %>%
   select(sentence_id, sentence)
 ```
 
-next we will tokenize again but this time to get words. In doing this we will retain the sentence_id column in our data.
+a continuación haremos un token de nuevo, pero esta vez para conseguir palabras. Al hacer esto, mantendremos la columna sentence_id en nuestros datos.
 
 ```{r}
 article_words <- article_sentences %>%
@@ -69,37 +70,41 @@ article_words %>%
   coord_flip()
 ```
 
+ahora tenemos todas las entradas suficientes para la función textrank_sentences. Sin embargo, iremos un paso más allá y eliminaremos las palabras de stop en article_words ya que aparecerían en la mayoría de las frases y realmente no contienen ninguna información en sí mismas.
 
 ```{r}
 article_words <- article_words %>%
   anti_join(data_frame(word = stopwords(kind = "es")), by = "word")
-article_words
+
 ```
+
+Si volvemos a visualizar el gráfico anterior podemos observar como hemos eliminado las palabras que no aportaban valor a las frases, tales como los artículos y conjunciones.
 
 ```{r}
-df <- data.frame(doc_id  = rep(1,nrow(article_sentences)), 
-                 sent_id = article_sentences$sentence_id, 
-                 tokens = article_words,
-                 stringsAsFactors = FALSE)
-df %>% 
-  bind_lexrank(tokens, doc_id, sent_id, level = 'tokens')
+article_words %>%
+  count(word, sort = TRUE) %>%
+  filter(n > 4) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip()
 ```
+Ejecutamos el algoritmo TextRank sólo requiere 2 entradas.
 
-```{r}
+*Un marco de datos con frases
+*Un data.frame con tokens (en nuestro caso palabras) que forman parte de cada frase.
+Así que estamos listos para correr
 
-
-article_sentences %>% 
-  bind_lexrank(sentence, sentence_id, level="sentences") %>% 
-  arrange(desc(lexrank)) %>% 
-  select(sentence, lexrank) %>% 
-  knitr::kable(caption = "Most Representative @realDonaldTrump Tweets")
-```
 
 ```{r}
 article_summary <- textrank_sentences(data = article_sentences, 
                                       terminology = article_words)
 article_summary
 ```
+
+Si bien el método de impresión es bueno, podemos extraer la información para un buen análisis posterior. La información sobre las frases se almacena en frases. Incluye la información article_sentences más la puntuación de textrank calculada. Si miramos el artículo a lo largo del tiempo, sería interesante ver dónde aparecen las frases importantes. En el gráfico siguiente podemos observa que frases poseenmayor score.
+
 ```{r}
 article_summary[["sentences"]] %>%
   ggplot(aes(textrank_id, textrank, fill = textrank_id)) +

@@ -1,5 +1,0 @@
-"0","article_sentences %>% "
-"0","  bind_lexrank(sentence, sentence_id, level=""sentences"") %>% "
-"0","  arrange(desc(lexrank)) %>% "
-"0","  select(sentence, lexrank) %>% "
-"0","  knitr::kable(caption = ""Most Representative @realDonaldTrump Tweets"")"
