@@ -1,6 +1,5 @@
-================
-Textrank
-================
+
+# Textrank
 
 TextRank implementation for text summarization and keyword extraction in R
 
